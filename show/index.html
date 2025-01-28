@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diabetes Glucose Levels</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Diabetes Glucose Levels</h1>
+            <div class="results">
+                <p id="mgdl-result"></p>
+                <p id="mmol-result"></p>
+            </div>
+        </div>
+        <script src="index.js"></script>
+        <script>
+            window.onload = async () => {
+                const mgdl = 157;
+                const mmol = ct_mmol(mgdl);
+                document.getElementById('mgdl-result').textContent = `Glucose Level: ${mgdl.toFixed(0)} mg/dL`;
+                document.getElementById('mmol-result').textContent = `Equivalent to: ${mmol.toFixed(2)} mmol/L`;
+            }
+        </script>
+    </body>
+</html>

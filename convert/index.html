@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Glucose Converter</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Glucose Converter</h1>
+        <div class="converter">
+            <label for="mgdl">mg/dL:</label>
+            <input type="number" id="mgdl" placeholder="Enter value in mg/dL">
+            <button onclick="convertToMmol()">Convert to mmol/L</button>
+        </div>
+        <div class="converter">
+            <label for="mmol">mmol/L:</label>
+            <input type="number" id="mmol" placeholder="Enter value in mmol/L">
+            <button onclick="convertToMgdl()">Convert to mg/dL</button>
+        </div>
+        <p id="result"></p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
