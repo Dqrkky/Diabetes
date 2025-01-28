@@ -8,7 +8,7 @@ def getBetweenValue(min :float=None, max :float=None):
 def squareRute(x :float=None):
     return x**.5
 
-c = [
+data = [
     {
         "type": "Severe Thinness",
         "values": {
@@ -73,11 +73,15 @@ c = [
 #bmi and kg to height
 #(kg/bmi)**.5
 
-kg = input("Kg : ")
-height = input("Height : ")
-kg = float(kg)
-height = float(height)
+kg = float(input("Kg : "))
+height = float(input("Height : ")) / 100
 
-bmi = kg/(height**2)
+def bmi(kg, height):
+    return kg/(height**2)
 
-print([g for g in [{f: c[f]} if c[f] == True else None for f in c] if g != None][0])
+_bmi = bmi(kg, height)
+
+bmi_category = {i["type"]: i["values"]["min"] < _bmi and _bmi < i["values"]["max"] for i in data}
+for category, is_in_range in bmi_category.items():
+    if is_in_range:
+        print(f"The BMI of {round(_bmi)} is classified as: {category}")
